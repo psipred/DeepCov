@@ -39,8 +39,10 @@ Running:
 
 The optional arguments -m and -r are primarily a means to reproduce results in our paper. For most 'production' purposes, you can leave these set to their defaults (covariance model + receptive field of 41 residues).
 
-The input alignment must be in the PSICOV format. If your alignment is in a different format, we recommend using the ConKit Python module to reformat it (https://pypi.python.org/pypi/conkit).
+The input alignment must be in the PSICOV format. If your alignment is in a different format, we recommend using the [ConKit Python module](https://pypi.python.org/pypi/conkit) to reformat it.
+
 The output is in the CASP contact format.
+
 An example input alignment and output contact file can be found in `test/example_io`.
 
 Tips:
