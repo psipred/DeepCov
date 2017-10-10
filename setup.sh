@@ -2,6 +2,8 @@
 
 # Setup DeepCov dependencies
 
+mkdir -p bin
+
 # compile cov21stats. Using only -O1 to *try* and keep things consistent across platforms.
 echo '***Compiling cov21stats...'
 cc -O1 -m64 -o bin/cov21stats src/cov21stats.c
