@@ -43,7 +43,7 @@ The input alignment must be in the PSICOV format. If your alignment is in a diff
 
 The output is in the CASP contact format.
 
-An example input alignment and output contact file can be found in `test/example_io`.
+An example input alignment is provided at `test/example_io/1guuA.aln`. The corresponding DeepCov output contact file is `test/example_io/1guuA.con`.
 
 Tips:
 -----
