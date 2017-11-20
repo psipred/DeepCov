@@ -105,7 +105,7 @@ elif [ ! -s $input_file ]; then
 fi
 
 # check that rf is a (positive) nonzero integer and not empty
-if ! [[ $rf =~ ^[1-9]+$ ]]; then 
+if ! [[ $rf =~ ^[0-9]+$ ]]; then 
 	echo "$0 : Error: receptive field value must be a positive integer. You supplied '$rf'. Exiting." >&2
 	exit 2
 fi
