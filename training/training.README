@@ -1,0 +1,11 @@
+This directory contains an example training script for DeepCov, using a covariance model and a receptive field of 41 residues (see our paper for details).
+
+In lasagne_cov_pred.py you will probably need to change some paths defined near the top of the script. These point to .map files from the dc_train.tgz tarball (available from http://bioinfadmin.cs.ucl.ac.uk/downloads/contact_pred_datasets)
+The .21c files are generated from the .aln files using the cov21stats program, which is included with DeepCov.
+
+The .21c files are the training examples for DeepCov, and the .map files are the corresponding outputs.
+
+For best performance you will need to correctly configure Theano (to use a GPU for example), as well as ensuring you use fast storage to read the input files. Information on configuring Theano can be found on Theano's website.
+
+
+
