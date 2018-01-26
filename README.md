@@ -49,6 +49,26 @@ Tips:
 -----
 For inferring contacts for single alignments, we find that running DeepCov on a (reasonably recent) CPU is faster than running on a GPU, when considering end-to-end runtime on our benchmark sets. For this reason, DeepCov will run on your CPU by default. If you'd like to change this behaviour, edit `deepcov.sh` and change the value of the `THEANO_FLAGS` variable near the end of the script (see http://deeplearning.net/software/theano/library/config.html for more details on this and other variables). You will also need to install other prerequisites for running on the GPU; please refer to Theano's documentation.
 
+Benchmarking scripts:
+------
+We've included some additional scripts that should reproduce results from our paper.
+For running the benchmarking scripts, you will need a recent install of R in addition to the dependencies listed above.
+You will also need the PSICOV150 test set, which comes with its own README and can be downloaded [here.](http://bioinfadmin.cs.ucl.ac.uk/downloads/contact_pred_datasets/)
+
+Once the dataset is in place, edit `run_all_covar_rawfreq.sh` to specify the location of the psicov150 set, and then run it, e.g.
+
+`./run_all_covar_rawfreq.sh covar 6 11`
+
+where 6 and 11 refer to the min and max sequence separation you want to consider, and 'covar' refers to the covariance model.
+
+With these inputs, output will be generated in your DeepCov installation directory, in a file named `all_windowsize_results_MEAN_covar_min6_max11.txt`.
+
+PLEASE NOTE: the benchmarking process does create a number of rather large files. Use with caution if you have limited storage.
+
+Training scripts:
+-------
+An example training script and a README can be found in `training/`, which includes a link to where training data can be found. 
+
 Citing:
 -------
 If you find DeepCov useful, please cite our paper (details to be added).
