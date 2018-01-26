@@ -1,0 +1,8 @@
+Compile: cc -O contactbench.c -lm -o contactbench
+
+contactbench pdbfile contactfile [min_seqsep max_seqsep dist_thresh]
+
+defaults:
+contactbench pdbfile contactfile 24 10000 8.0
+
+NOTE: this version assumes sequence numbering in PDB file matches numbering of contactfile

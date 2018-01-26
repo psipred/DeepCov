@@ -5,8 +5,13 @@
 mkdir -p bin
 
 # compile cov21stats. Using only -O1 to *try* and keep things consistent across platforms.
+# -O2 and -O3 are okay to use.
 echo '***Compiling cov21stats...'
-cc -O1 -m64 -o bin/cov21stats src/cov21stats.c
+cc -O1 -m64 -o bin/cov21stats src/cov21stats.c -lm
+
+# compile contactbench
+echo '***Compiling contactbench...'
+cc -O1 -m64 -o contactbench/contactbench contactbench/contactbench.c -lm
 
 echo '***Testing DeepCov...'
 
