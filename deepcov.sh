@@ -10,7 +10,7 @@
 help_text="""
 usage: $0 [-h] [-m model_type] [-r receptive_field] -i input_file [-o output_contact_file]
 
-DeepCov v1.0 by David T. Jones
+DeepCov v1.0 by David T. Jones and Shaun M. Kandathil
 
 required arguments:
   -i input_file, --input-file input_file
@@ -33,8 +33,9 @@ if [ -z "$*" ]; then
     exit 0
 fi
 
-# Some vars
-python='python3'
+python='python3' ### Redefine this var if your python executable isn't called python3
+
+# Do not change these 3:
 params='FINAL_fullmap_metapsicov_model.npz'
 nndef='nndef.py'
 predictor='predictor.py'
@@ -162,12 +163,14 @@ nndef_linkname=${deepcov_root}/$nndef
 ln -sf ${model_file} $nndef_linkname
 ln -sf ${param_file} $params
 
-# get correct version of input tensor from cov21stats. If cov21stats fails, stop
+# get correct version of input tensor from cov21stats. TODO: If cov21stats fails, stop
 echo 'Creating input features...'
 $cov21stats $cov21stats_options $input_file $filename_21stats
 
 # Actually run DeepCov
 echo 'Running DeepCov...'
+
+# For inference we'll run on the CPU as we've found it to be faster
 export THEANO_FLAGS='device=cpu,floatX=float32' #, blas.ldflags="-L/lib64 -lopenblas"'
 $python $deepcov_root/$predictor $filename_21stats > $con_file
 unset THEANO_FLAGS
@@ -176,7 +179,7 @@ echo 'Cleaning up...'
 # Remove (frequently large) 21stats file
 rm $filename_21stats
 
-# cleanup symlinks and one .pyc file
+# cleanup symlinks and one .pyc file. TODO: is there any benefit in keeping the pycache dir?
 rm -rf $nndef_linkname $params ${nndef_linkname}c "${deepcov_root}/__pycache__/"
 
 echo "Results in $con_file"
