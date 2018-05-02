@@ -71,4 +71,6 @@ An example training script and a README can be found in `training/`, which inclu
 
 Citing:
 -------
-If you find DeepCov useful, please cite our paper (details to be added).
+If you find DeepCov useful, please cite our paper in Bioinformatics:
+
+Jones DT and Kandathil SM (2018). High precision in protein contact prediction using fully convolutional neural networks and minimal sequence features. Bioinformatics. In Press. [Link](https://doi.org/10.1093/bioinformatics/bty341)
