@@ -29,7 +29,7 @@ Setup and testing:
 Run `setup.sh`.
 
 This will compile and test a C executable, cov21stats. This executable generates covariance or pair frequency data from your input alignment.
-The script will also test the DeepCov prediction pipeline on a test input alignment, so make sure all dependencies listed above are in place before running it. By default, the scripts will use whatever `cc` and `python` point to in your shell. These can be changed in `deepcov.sh` and `setup.sh`.
+The script will also test the DeepCov prediction pipeline on a test input alignment, so make sure all dependencies listed above are in place before running it. By default, the scripts will use whatever `cc` and `python3` point to in your shell. These can be changed in `deepcov.sh` and `setup.sh`.
 
 The testing procedure will compare a newly generated contact prediction (in `test/`) against the reference file found in `test/example_io`. Since different OS/compiler combinations can lead to very slightly different contact scores, only the ranking of the contacts is evaluated when deciding whether the test was successful. To see if there are any differences, please compare the two contact files using a program such as `sdiff`.
 
