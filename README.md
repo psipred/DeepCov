@@ -73,4 +73,4 @@ Citing:
 -------
 If you find DeepCov useful, please cite our paper in Bioinformatics:
 
-Jones DT and Kandathil SM (2018). High precision in protein contact prediction using fully convolutional neural networks and minimal sequence features. Bioinformatics. In Press. [Link](https://doi.org/10.1093/bioinformatics/bty341)
+Jones DT and Kandathil SM (2018). High precision in protein contact prediction using fully convolutional neural networks and minimal sequence features. _Bioinformatics_ **34**(19): 3308-3315. [Link](https://doi.org/10.1093/bioinformatics/bty341)
