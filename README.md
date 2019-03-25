@@ -53,6 +53,7 @@ Benchmarking scripts:
 ------
 We've included some additional scripts that should reproduce results from our paper.
 For running the benchmarking scripts, you will need a recent install of R in addition to the dependencies listed above.
+The benchmark process also requires the R package `beanplot`.
 You will also need the PSICOV150 test set, which comes with its own README and can be downloaded [here.](http://bioinfadmin.cs.ucl.ac.uk/downloads/contact_pred_datasets/)
 
 Once the dataset is in place, edit `run_all_covar_rawfreq.sh` to specify the location of the psicov150 set, and then run it, e.g.
